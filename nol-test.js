@@ -1,16 +1,16 @@
-
+const assert = require( "assert" );
 const nol = require( "./nol.js" );
 
-console.log( nol( ) );
+assert.equal( JSON.stringify( nol( ) ), '"[object Null]"', "should be equal" );
 
-console.log( JSON.stringify( nol( ) ) );
+assert.equal( `${ nol( ) }`, "", "should be empty string" );
 
-console.log( `${ nol( ) }` );
+assert.equal( +nol( ), 0, "should have value 0" );
 
-console.log( +nol( ) );
+assert.equal( !!( nol( ) ), true, "should be true" );
 
-console.log( !!( nol( ) ) );
+assert.equal( ( nol( ) ) + "", "false", "should be 'false'" );
 
-console.log( ( nol( ) ) + "" );
+assert.equal( ( nol( "[object Null]" ) ) + "", "false", "should be 'false'" );
 
-console.log( ( nol( "[object Null]" ) ) + "" );
+console.log( "ok" );
