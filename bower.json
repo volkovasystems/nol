@@ -1,12 +1,13 @@
 {
   "name": "nol",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Null object class wrapper.",
   "main": "nol.deploy.js",
   "support": "nol.support.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-	"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+	"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+	"Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
