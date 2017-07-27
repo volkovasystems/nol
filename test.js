@@ -1,7 +1,7 @@
 "use strict";
 
 /*;
-	@module-license:
+	@test-license:
 		The MIT License (MIT)
 		@mit-license
 
@@ -25,53 +25,66 @@
 		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 		SOFTWARE.
-	@end-module-license
+	@end-test-license
 
-	@module-configuration:
+	@test-configuration:
 		{
 			"package": "nol",
-			"path": "nol/nol.js",
-			"file": "nol.js",
-			"module": "nol",
+			"path": "nol/test.module.js",
+			"file": "test.module.js",
+			"module": "test",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-				"Vinse Vinalon <vinsevinalon@gmail.com>"
-			],
-			"repository": "https://github.com/volkovasystems/nol.git",
-			"test": "nol-test.js",
-			"global": true
+			"repository": "https://github.com/volkovasystems/nol.git"
 		}
-	@end-module-configuration
+	@end-test-configuration
 
-	@module-documentation:
-		Null object class wrapper.
-	@end-module-documentation
+	@test-documentation:
+
+	@end-test-documentation
 
 	@include:
 		{
-			"ehm": "ehm",
-			"harden": "harden"
+			"assert": "should",
+			"nol": "nol"
 		}
 	@end-include
 */
 
-const harden = require( "harden" );
-
-const Meta = require( "ehm" )( );
+const assert = require( "should" );
 
 //: @server:
-const Null = require( "./null.js" );
+const nol = require( "./nol.js" );
 //: @end-server
 
 
 
-const nol = function nol( ){
-	return Meta.create( Null, null );
-};
 
-harden( "Null", Null, nol );
-harden( "Null", Null, Meta );
 
-module.exports = nol;
+
+//: @server:
+
+describe( "nol", ( ) => {
+
+	describe( "`nol( )`", ( ) => {
+		it( "should return Null instance", ( ) => {
+			let data = nol( );
+
+			assert.equal( typeof data, "object" );
+
+			assert.equal( data.constructor.name, "Null" );
+
+			assert.equal( data.valueOf( ), null );
+
+		} );
+	} );
+
+} );
+
+//: @end-server
+
+
+
+
+
+

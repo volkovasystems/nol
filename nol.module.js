@@ -65,7 +65,9 @@ const Meta = require( "ehm" )( );
 const Null = require( "./null.js" );
 //: @end-server
 
-
+//: @client:
+const Null = require( "./null.support.js" );
+//: @end-client
 
 const nol = function nol( ){
 	return Meta.create( Null, null );

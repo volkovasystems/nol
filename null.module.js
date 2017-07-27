@@ -30,8 +30,8 @@
 	@submodule-configuration:
 		{
 			"package": "nol",
-			"path": "nol/null.js",
-			"file": "null.js",
+			"path": "nol/null.module.js",
+			"file": "null.module.js",
 			"module": "nol",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
@@ -50,60 +50,82 @@
 	@submodule-documentation:
 		Null class wrapper.
 	@end-submodule-documentation
+
+	@include:
+		{
+			"ehm": "ehm"
+		}
+	@end-include
 */
 
+const Meta = require( "ehm" )( );
+
+const EMPTY_STRING = "";
 const NULL = null;
-const NULL_TAG = Object.prototype.toString.call( NULL );
+const SERIALIZE_NULL_TAG = "[object Null:null]";
+const META_SERIALIZE_NULL_TAG = Meta.create( null ).serialize( );
 
-const NAME = Symbol.for( "name" );
-const VALUE = Symbol.for( "value" );
-const TYPE = Symbol.for( "type" );
+const NUL_TAG_PATTERN = /^\[object Null\]$/;
 
-class Null {
+class Null extends Meta {
 	static [ Symbol.hasInstance ]( instance ){
-		return instance === NULL || ( instance || { } ).constructor === Null;
+		return (
+			instance === NULL ||
+			Meta.instanceOf( instance, this )
+		);
 	}
 
-	constructor( entity ){
-		if( ( typeof entity == "string" && entity === NULL_TAG ) ||
-			entity === NULL || !arguments.length )
-		{
-			this[ NAME ] = "null";
-			this[ VALUE ] = entity || NULL;
-			this[ TYPE ] = typeof this.value;
+	static deserialize( data, parser, blueprint ){
+		/*;
+			@meta-configuration:
+				{
+					"data": "*",
+					"parser": "function",
+					"blueprint": "function"
+				}
+			@end-meta-configuration
+		*/
 
-		}else if( arguments.length ){
-			throw new Error( `invalid null value, ${ entity }` );
-		}
+		return Meta.create( this, null );
 	}
 
-	toString( ){
-		return NULL_TAG;
+	constructor( ){
+		super( NULL, "Null" );
 	}
 
-	get [ Symbol.toStringTag ]( ){
-		return "Null";
+	get [ Meta.OBJECT ]( ){
+		return EMPTY_STRING;
 	}
 
-	valueOf( ){
-		return NULL;
+	get [ Meta.BOOLEAN ]( ){
+		return false;
 	}
 
-	[ Symbol.toPrimitive ]( hint ){
-		switch( hint ){
-			case "string":
-				return "";
-
-			case "number":
-				return 0;
-
-			default:
-				return false;
-		}
+	get [ Meta.STRING ]( ){
+		return EMPTY_STRING;
 	}
 
-	toJSON( ){
-		return this.toString( );
+	get [ Meta.NUMBER ]( ){
+		return 0;
+	}
+
+	serialize( parser ){
+		/*;
+			@meta-configuration:
+				{
+					"parser": "function"
+				}
+			@end-meta-configuration
+		*/
+
+		return SERIALIZE_NULL_TAG;
+	}
+
+	isCompatible( tag ){
+		return (
+			tag === SERIALIZE_NULL_TAG
+			|| tag === META_SERIALIZE_NULL_TAG
+		);
 	}
 }
 

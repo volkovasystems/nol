@@ -1,112 +1,132 @@
 "use strict";
 
 /*;
-              	@submodule-license:
-              		The MIT License (MIT)
-              		@mit-license
-              
-              		Copyright (@c) 2017 Richeve Siodina Bebedor
-              		@email: richeve.bebedor@gmail.com
-              
-              		Permission is hereby granted, free of charge, to any person obtaining a copy
-              		of this software and associated documentation files (the "Software"), to deal
-              		in the Software without restriction, including without limitation the rights
-              		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-              		copies of the Software, and to permit persons to whom the Software is
-              		furnished to do so, subject to the following conditions:
-              
-              		The above copyright notice and this permission notice shall be included in all
-              		copies or substantial portions of the Software.
-              
-              		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-              		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-              		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-              		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-              		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-              		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-              		SOFTWARE.
-              	@end-submodule-license
-              
-              	@submodule-configuration:
-              		{
-              			"package": "nol",
-              			"path": "nol/null.js",
-              			"file": "null.js",
-              			"module": "nol",
-              			"author": "Richeve S. Bebedor",
-              			"eMail": "richeve.bebedor@gmail.com",
-              			"contributors": [
-              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-              				"Vinse Vinalon <vinsevinalon@gmail.com>"
-              			],
-              			"repository": "https://github.com/volkovasystems/nol.git",
-              			"test": "nol-test.js",
-              			"global": false,
-              			"internal": true,
-              			"class": true
-              		}
-              	@end-submodule-configuration
-              
-              	@submodule-documentation:
-              		Null class wrapper.
-              	@end-submodule-documentation
-              */var _toStringTag = require("babel-runtime/core-js/symbol/to-string-tag");var _toStringTag2 = _interopRequireDefault(_toStringTag);var _toPrimitive = require("babel-runtime/core-js/symbol/to-primitive");var _toPrimitive2 = _interopRequireDefault(_toPrimitive);var _typeof2 = require("babel-runtime/helpers/typeof");var _typeof3 = _interopRequireDefault(_typeof2);var _hasInstance = require("babel-runtime/core-js/symbol/has-instance");var _hasInstance2 = _interopRequireDefault(_hasInstance);var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);var _createClass2 = require("babel-runtime/helpers/createClass");var _createClass3 = _interopRequireDefault(_createClass2);var _for = require("babel-runtime/core-js/symbol/for");var _for2 = _interopRequireDefault(_for);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+	@submodule-license:
+		The MIT License (MIT)
+		@mit-license
 
-var NULL = null;
-var NULL_TAG = Object.prototype.toString.call(NULL);
+		Copyright (@c) 2017 Richeve Siodina Bebedor
+		@email: richeve.bebedor@gmail.com
 
-var NAME = (0, _for2.default)("name");
-var VALUE = (0, _for2.default)("value");
-var TYPE = (0, _for2.default)("type");var
+		Permission is hereby granted, free of charge, to any person obtaining a copy
+		of this software and associated documentation files (the "Software"), to deal
+		in the Software without restriction, including without limitation the rights
+		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		copies of the Software, and to permit persons to whom the Software is
+		furnished to do so, subject to the following conditions:
 
-Null = function () {(0, _createClass3.default)(Null, null, [{ key: _hasInstance2.default, value: function value(
-		instance) {
-			return instance === NULL || (instance || {}).constructor === Null;
-		} }]);
+		The above copyright notice and this permission notice shall be included in all
+		copies or substantial portions of the Software.
 
-	function Null(entity) {(0, _classCallCheck3.default)(this, Null);
-		if (typeof entity == "string" && entity === NULL_TAG ||
-		entity === NULL || !arguments.length)
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+		SOFTWARE.
+	@end-submodule-license
+
+	@submodule-configuration:
 		{
-			this[NAME] = "null";
-			this[VALUE] = entity || NULL;
-			this[TYPE] = (0, _typeof3.default)(this.value);
-
-		} else if (arguments.length) {
-			throw new Error("invalid null value, " + entity);
+			"package": "nol",
+			"path": "nol/null.module.js",
+			"file": "null.module.js",
+			"module": "nol",
+			"author": "Richeve S. Bebedor",
+			"eMail": "richeve.bebedor@gmail.com",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
+			],
+			"repository": "https://github.com/volkovasystems/nol.git",
+			"test": "nol-test.js",
+			"global": false,
+			"internal": true,
+			"class": true
 		}
-	}(0, _createClass3.default)(Null, [{ key: "toString", value: function toString()
+	@end-submodule-configuration
 
+	@submodule-documentation:
+		Null class wrapper.
+	@end-submodule-documentation
+
+	@include:
 		{
-			return NULL_TAG;
-		} }, { key: "valueOf", value: function valueOf()
+			"ehm": "ehm"
+		}
+	@end-include
+*/
 
+const Meta = require( "ehm" )( );
 
+const EMPTY_STRING = "";
+const NULL = null;
+const SERIALIZE_NULL_TAG = "[object Null:null]";
+const META_SERIALIZE_NULL_TAG = Meta.create( null ).serialize( );
 
+const NUL_TAG_PATTERN = /^\[object Null\]$/;
 
+class Null extends Meta {
+	static [ Symbol.hasInstance ]( instance ){
+		return (
+			instance === NULL ||
+			Meta.instanceOf( instance, this )
+		);
+	}
 
-		{
-			return NULL;
-		} }, { key: _toPrimitive2.default, value: function value(
+	static deserialize( data, parser, blueprint ){
+		/*;
+			@meta-configuration:
+				{
+					"data": "*",
+					"parser": "function",
+					"blueprint": "function"
+				}
+			@end-meta-configuration
+		*/
 
-		hint) {
-			switch (hint) {
-				case "string":
-					return "";
+		return Meta.create( this, null );
+	}
 
-				case "number":
-					return 0;
+	constructor( ){
+		super( NULL, "Null" );
+	}
 
-				default:
-					return false;}
+	get [ Meta.OBJECT ]( ){
+		return EMPTY_STRING;
+	}
 
-		} }, { key: "toJSON", value: function toJSON()
+	get [ Meta.BOOLEAN ]( ){
+		return false;
+	}
 
-		{
-			return this.toString();
-		} }, { key: _toStringTag2.default, get: function get() {return "Null";} }]);return Null;}();
+	get [ Meta.STRING ]( ){
+		return EMPTY_STRING;
+	}
 
+	get [ Meta.NUMBER ]( ){
+		return 0;
+	}
+
+	serialize( parser ){
+		/*;
+			@meta-configuration:
+				{
+					"parser": "function"
+				}
+			@end-meta-configuration
+		*/
+
+		return SERIALIZE_NULL_TAG;
+	}
+
+	isCompatible( tag ){
+		return (
+			tag === SERIALIZE_NULL_TAG
+			|| tag === META_SERIALIZE_NULL_TAG
+		);
+	}
+}
 
 module.exports = Null;
-
-//# sourceMappingURL=null.js.map

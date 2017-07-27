@@ -1,0 +1,84 @@
+{
+	"state": {
+		"passed": 1,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-07-27T17:19:29.141Z",
+	"end": "2017-07-27T17:20:14.757Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "nol",
+			"duration": 0,
+			"start": "2017-07-27T17:20:13.958Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "nol",
+			"duration": 617,
+			"start": "2017-07-27T17:20:13.958Z",
+			"end": "2017-07-27T17:20:14.575Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-07-27T17:20:13.960Z",
+					"end": "2017-07-27T17:20:13.960Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return Null instance"
+				},
+				{
+					"start": "2017-07-27T17:20:14.574Z",
+					"end": "2017-07-27T17:20:14.574Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return Null instance"
+				},
+				{
+					"start": "2017-07-27T17:20:14.575Z",
+					"end": "2017-07-27T17:20:14.575Z",
+					"duration": 0,
+					"title": "\"after all\" hook",
+					"associatedSuite": "nol"
+				}
+			]
+		},
+		{
+			"name": "`nol( )`",
+			"duration": 617,
+			"start": "2017-07-27T17:20:13.958Z",
+			"end": "2017-07-27T17:20:14.575Z",
+			"tests": [
+				{
+					"name": "should return Null instance",
+					"start": "2017-07-27T17:20:13.959Z",
+					"end": "2017-07-27T17:20:14.574Z",
+					"duration": 615,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}
