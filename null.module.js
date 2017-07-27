@@ -63,9 +63,7 @@ const Meta = require( "ehm" )( );
 const EMPTY_STRING = "";
 const NULL = null;
 const SERIALIZE_NULL_TAG = "[object Null:null]";
-const META_SERIALIZE_NULL_TAG = Meta.create( null ).serialize( );
-
-const NUL_TAG_PATTERN = /^\[object Null\]$/;
+const META_SERIALIZE_NULL_TAG = Meta.create( NULL ).serialize( );
 
 class Null extends Meta {
 	static [ Symbol.hasInstance ]( instance ){
@@ -86,7 +84,7 @@ class Null extends Meta {
 			@end-meta-configuration
 		*/
 
-		return Meta.create( this, null );
+		return Meta.create( this, NULL );
 	}
 
 	constructor( ){

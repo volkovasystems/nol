@@ -1,6 +1,6 @@
 {
 	"name": "nol",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Null object class wrapper.",
 	"main": "nol.deploy.js",
 	"support": "nol.support.js",

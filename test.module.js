@@ -98,9 +98,9 @@ describe( "nol", ( ) => {
 
 			assert.equal( typeof data, "object" );
 
-			//assert.equal( data.constructor.name, "Null" );
+			assert.equal( data.constructor.name, "Null" );
 
-			//assert.equal( data.valueOf( ), null );
+			assert.equal( data.valueOf( ), null );
 		} );
 	} );
 
