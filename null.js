@@ -68,8 +68,8 @@ const META_SERIALIZE_NULL_TAG = Meta.create( NULL ).serialize( );
 class Null extends Meta {
 	static [ Symbol.hasInstance ]( instance ){
 		return (
-			instance === NULL ||
-			Meta.instanceOf( instance, this )
+			instance === NULL
+			|| Meta.instanceOf( instance, this )
 		);
 	}
 
@@ -87,12 +87,15 @@ class Null extends Meta {
 		return Meta.create( this, NULL );
 	}
 
-	constructor( ){
-		super( NULL, "Null" );
+	static isCompatible( tag ){
+		return (
+			tag === SERIALIZE_NULL_TAG
+			|| tag === META_SERIALIZE_NULL_TAG
+		);
 	}
 
-	get [ Meta.OBJECT ]( ){
-		return EMPTY_STRING;
+	constructor( ){
+		super( NULL, "Null" );
 	}
 
 	get [ Meta.BOOLEAN ]( ){
@@ -119,10 +122,10 @@ class Null extends Meta {
 		return SERIALIZE_NULL_TAG;
 	}
 
-	isCompatible( tag ){
+	isEqual( entity ){
 		return (
-			tag === SERIALIZE_NULL_TAG
-			|| tag === META_SERIALIZE_NULL_TAG
+			entity instanceof Null
+			|| entity === NULL
 		);
 	}
 }
