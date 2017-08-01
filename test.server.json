@@ -5,15 +5,15 @@
 		"passes": 1,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-01T08:08:55.256Z",
-		"end": "2017-08-01T08:08:55.260Z",
-		"duration": 4
+		"start": "2017-08-01T10:02:57.653Z",
+		"end": "2017-08-01T10:02:57.659Z",
+		"duration": 6
 	},
 	"tests": [
 		{
 			"title": "should return Null instance",
 			"fullTitle": "nol `nol( )` should return Null instance",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -24,7 +24,7 @@
 		{
 			"title": "should return Null instance",
 			"fullTitle": "nol `nol( )` should return Null instance",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		}
