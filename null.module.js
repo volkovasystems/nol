@@ -84,7 +84,13 @@ class Null extends Meta {
 			@end-meta-configuration
 		*/
 
-		return Meta.create( this, NULL );
+		let entity = Meta.deserialize( data, parser, this );
+
+		if( entity.isCorrupted( ) ){
+			return entity.revert( );
+		}
+
+		return entity;
 	}
 
 	static isCompatible( tag ){
@@ -94,8 +100,12 @@ class Null extends Meta {
 		);
 	}
 
-	constructor( ){
-		super( NULL, "Null" );
+	constructor( entity ){
+		super( entity, "Null" );
+	}
+
+	check( entity ){
+		return entity === NULL;
 	}
 
 	get [ Meta.BOOLEAN ]( ){

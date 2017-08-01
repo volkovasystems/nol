@@ -67,8 +67,20 @@ const Null = require( "./null.js" );
 
 
 
-const nol = function nol( ){
-	return Meta.create( Null, null );
+const nol = function nol( entity ){
+	/*;
+		@meta-configuration:
+			{
+				"entity:required": null
+			}
+		@end-meta-configuration
+	*/
+
+	if( entity !== null ){
+		return Meta.create( Null, null );
+	}
+
+	return Meta.create( Null, entity );
 };
 
 harden( "Null", Null, nol );
