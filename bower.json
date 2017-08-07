@@ -1,6 +1,6 @@
 {
 	"name": "nol",
-	"version": "0.9.0",
+	"version": "0.10.0",
 	"description": "Null object class wrapper.",
 	"main": "nol.deploy.js",
 	"support": "nol.support.js",
@@ -25,11 +25,8 @@
 		"test",
 		"tests"
 	],
-	"resolutions": {
-		"harden": "^0.23.0"
-	},
 	"dependencies": {
-		"ehm": "^0.20.0",
+		"ehm": "^0.21.0",
 		"harden": "^0.23.0"
 	}
 }
