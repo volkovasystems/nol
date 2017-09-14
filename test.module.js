@@ -45,13 +45,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"nol": "nol"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const nol = require( "./nol.js" );
@@ -83,6 +83,52 @@ describe( "nol", ( ) => {
 		} );
 	} );
 
+	describe( "`nol( null )`", ( ) => {
+		it( "should return Null instance", ( ) => {
+			let data = nol( null );
+
+			assert.equal( typeof data, "object" );
+
+			assert.equal( data.constructor.name, "Null" );
+
+			assert.equal( data.valueOf( ), null );
+		} );
+	} );
+
+	describe( "`nol( null ).toString( )`", ( ) => {
+		it( "should return empty string", ( ) => {
+			assert.equal( nol( null ).toString( ), "" );
+		} );
+	} );
+
+	describe( "`nol( null ).toNumber( )`", ( ) => {
+		it( "should return 0", ( ) => {
+			assert.equal( nol( null ).toNumber( ), 0 );
+		} );
+	} );
+
+	describe( "`nol( null ).toBoolean( )`", ( ) => {
+		it( "should return false", ( ) => {
+			assert.equal( nol( null ).toBoolean( ), false );
+		} );
+	} );
+
+	describe( "`nol( null ).toObject( )`", ( ) => {
+		it( "should return object type", ( ) => {
+			let descriptor = nol( null ).toObject( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
+		} );
+	} );
+
 } );
 
 //: @end-server
@@ -101,6 +147,53 @@ describe( "nol", ( ) => {
 			assert.equal( data.constructor.name, "Null" );
 
 			assert.equal( data.valueOf( ), null );
+
+		} );
+	} );
+
+	describe( "`nol( null )`", ( ) => {
+		it( "should return Null instance", ( ) => {
+			let data = nol( null );
+
+			assert.equal( typeof data, "object" );
+
+			assert.equal( data.constructor.name, "Null" );
+
+			assert.equal( data.valueOf( ), null );
+		} );
+	} );
+
+	describe( "`nol( null ).toString( )`", ( ) => {
+		it( "should return empty string", ( ) => {
+			assert.equal( nol( null ).toString( ), "" );
+		} );
+	} );
+
+	describe( "`nol( null ).toNumber( )`", ( ) => {
+		it( "should return 0", ( ) => {
+			assert.equal( nol( null ).toNumber( ), 0 );
+		} );
+	} );
+
+	describe( "`nol( null ).toBoolean( )`", ( ) => {
+		it( "should return false", ( ) => {
+			assert.equal( nol( null ).toBoolean( ), false );
+		} );
+	} );
+
+	describe( "`nol( null ).toObject( )`", ( ) => {
+		it( "should return object type", ( ) => {
+			let descriptor = nol( null ).toObject( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
 		} );
 	} );
 
@@ -125,6 +218,121 @@ describe( "nol", ( ) => {
 
 			assert.equal( browser.url( bridgeURL ).execute( ( ) => `${ nol( ).valueOf( ) }` ).value, "null" );
 
+		} );
+	} );
+
+	describe( "`nol( null )`", ( ) => {
+		it( "should return Null instance", ( ) => {
+			//: @ignore:
+			let testA = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let data = nol( null );
+
+					return typeof data;
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( testA, "object" );
+
+
+			let testB = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let data = nol( null );
+
+					return data.constructor.name;
+				}
+
+			).value;
+
+			assert.equal( testB, "Null" );
+
+
+			let testC = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let data = nol( null );
+
+					return data.valueOf( );
+				}
+
+			).value;
+
+			assert.equal( testC, null );
+		} );
+	} );
+
+	describe( "`nol( null ).toString( )`", ( ) => {
+		it( "should return empty string", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return nol( null ).toString( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, "" );
+		} );
+	} );
+
+	describe( "`nol( null ).toNumber( )`", ( ) => {
+		it( "should return 0", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return nol( null ).toNumber( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, 0 );
+		} );
+	} );
+
+	describe( "`nol( null ).toBoolean( )`", ( ) => {
+		it( "should return false", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return nol( null ).toBoolean( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, false );
+		} );
+	} );
+
+	describe( "`nol( null ).toObject( )`", ( ) => {
+		it( "should return object type", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let descriptor = nol( null ).toObject( );
+
+					let test = typeof descriptor == "object" &&
+						"type" in descriptor == true &&
+						"name" in descriptor == true &&
+						"value" in descriptor == true &&
+						"format" in descriptor == true;
+
+					return test;
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, true );
 		} );
 	} );
 
