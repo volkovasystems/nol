@@ -1,19 +1,54 @@
 {
 	"stats": {
-		"suites": 2,
-		"tests": 1,
-		"passes": 1,
+		"suites": 7,
+		"tests": 6,
+		"passes": 6,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-07T12:16:01.857Z",
-		"end": "2017-08-07T12:16:01.862Z",
-		"duration": 5
+		"start": "2017-09-14T06:35:06.458Z",
+		"end": "2017-09-14T06:35:06.464Z",
+		"duration": 6
 	},
 	"tests": [
 		{
 			"title": "should return Null instance",
 			"fullTitle": "nol `nol( )` should return Null instance",
 			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return Null instance",
+			"fullTitle": "nol `nol( null )` should return Null instance",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return empty string",
+			"fullTitle": "nol `nol( null ).toString( )` should return empty string",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return 0",
+			"fullTitle": "nol `nol( null ).toNumber( )` should return 0",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "nol `nol( null ).toBoolean( )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return object type",
+			"fullTitle": "nol `nol( null ).toObject( )` should return object type",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -25,6 +60,41 @@
 			"title": "should return Null instance",
 			"fullTitle": "nol `nol( )` should return Null instance",
 			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return Null instance",
+			"fullTitle": "nol `nol( null )` should return Null instance",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return empty string",
+			"fullTitle": "nol `nol( null ).toString( )` should return empty string",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return 0",
+			"fullTitle": "nol `nol( null ).toNumber( )` should return 0",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "nol `nol( null ).toBoolean( )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return object type",
+			"fullTitle": "nol `nol( null ).toObject( )` should return object type",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		}

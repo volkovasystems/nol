@@ -1,11 +1,11 @@
 {
 	"state": {
-		"passed": 1,
+		"passed": 6,
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-08-07T12:16:02.947Z",
-	"end": "2017-08-07T12:16:47.091Z",
+	"start": "2017-09-14T06:35:07.627Z",
+	"end": "2017-09-14T06:35:45.304Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -28,37 +28,117 @@
 		{
 			"name": "nol",
 			"duration": 0,
-			"start": "2017-08-07T12:16:45.895Z",
+			"start": "2017-09-14T06:35:43.636Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "nol",
-			"duration": 1014,
-			"start": "2017-08-07T12:16:45.896Z",
-			"end": "2017-08-07T12:16:46.910Z",
+			"duration": 1490,
+			"start": "2017-09-14T06:35:43.637Z",
+			"end": "2017-09-14T06:35:45.127Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-08-07T12:16:45.897Z",
-					"end": "2017-08-07T12:16:45.898Z",
+					"start": "2017-09-14T06:35:43.638Z",
+					"end": "2017-09-14T06:35:43.638Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return Null instance"
+				},
+				{
+					"start": "2017-09-14T06:35:44.725Z",
+					"end": "2017-09-14T06:35:44.726Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return Null instance"
+				},
+				{
+					"start": "2017-09-14T06:35:44.726Z",
+					"end": "2017-09-14T06:35:44.727Z",
 					"duration": 1,
 					"title": "\"before each\" hook",
 					"associatedSuite": "nol",
 					"associatedTest": "should return Null instance"
 				},
 				{
-					"start": "2017-08-07T12:16:46.909Z",
-					"end": "2017-08-07T12:16:46.909Z",
+					"start": "2017-09-14T06:35:44.893Z",
+					"end": "2017-09-14T06:35:44.893Z",
 					"duration": 0,
 					"title": "\"after each\" hook",
 					"associatedSuite": "nol",
 					"associatedTest": "should return Null instance"
 				},
 				{
-					"start": "2017-08-07T12:16:46.910Z",
-					"end": "2017-08-07T12:16:46.911Z",
+					"start": "2017-09-14T06:35:44.894Z",
+					"end": "2017-09-14T06:35:44.894Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return empty string"
+				},
+				{
+					"start": "2017-09-14T06:35:44.951Z",
+					"end": "2017-09-14T06:35:44.952Z",
 					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return empty string"
+				},
+				{
+					"start": "2017-09-14T06:35:44.952Z",
+					"end": "2017-09-14T06:35:44.952Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return 0"
+				},
+				{
+					"start": "2017-09-14T06:35:45.008Z",
+					"end": "2017-09-14T06:35:45.008Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return 0"
+				},
+				{
+					"start": "2017-09-14T06:35:45.009Z",
+					"end": "2017-09-14T06:35:45.010Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return false"
+				},
+				{
+					"start": "2017-09-14T06:35:45.073Z",
+					"end": "2017-09-14T06:35:45.073Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return false"
+				},
+				{
+					"start": "2017-09-14T06:35:45.076Z",
+					"end": "2017-09-14T06:35:45.077Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return object type"
+				},
+				{
+					"start": "2017-09-14T06:35:45.127Z",
+					"end": "2017-09-14T06:35:45.127Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "nol",
+					"associatedTest": "should return object type"
+				},
+				{
+					"start": "2017-09-14T06:35:45.129Z",
+					"end": "2017-09-14T06:35:45.129Z",
+					"duration": 0,
 					"title": "\"after all\" hook",
 					"associatedSuite": "nol"
 				}
@@ -66,15 +146,95 @@
 		},
 		{
 			"name": "`nol( )`",
-			"duration": 1014,
-			"start": "2017-08-07T12:16:45.896Z",
-			"end": "2017-08-07T12:16:46.910Z",
+			"duration": 1089,
+			"start": "2017-09-14T06:35:43.637Z",
+			"end": "2017-09-14T06:35:44.726Z",
 			"tests": [
 				{
 					"name": "should return Null instance",
-					"start": "2017-08-07T12:16:45.897Z",
-					"end": "2017-08-07T12:16:46.908Z",
-					"duration": 1011,
+					"start": "2017-09-14T06:35:43.638Z",
+					"end": "2017-09-14T06:35:44.725Z",
+					"duration": 1087,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`nol( null )`",
+			"duration": 168,
+			"start": "2017-09-14T06:35:44.726Z",
+			"end": "2017-09-14T06:35:44.894Z",
+			"tests": [
+				{
+					"name": "should return Null instance",
+					"start": "2017-09-14T06:35:44.726Z",
+					"end": "2017-09-14T06:35:44.893Z",
+					"duration": 167,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`nol( null ).toString( )`",
+			"duration": 58,
+			"start": "2017-09-14T06:35:44.894Z",
+			"end": "2017-09-14T06:35:44.952Z",
+			"tests": [
+				{
+					"name": "should return empty string",
+					"start": "2017-09-14T06:35:44.894Z",
+					"end": "2017-09-14T06:35:44.951Z",
+					"duration": 57,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`nol( null ).toNumber( )`",
+			"duration": 56,
+			"start": "2017-09-14T06:35:44.952Z",
+			"end": "2017-09-14T06:35:45.008Z",
+			"tests": [
+				{
+					"name": "should return 0",
+					"start": "2017-09-14T06:35:44.952Z",
+					"end": "2017-09-14T06:35:45.008Z",
+					"duration": 56,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`nol( null ).toBoolean( )`",
+			"duration": 68,
+			"start": "2017-09-14T06:35:45.008Z",
+			"end": "2017-09-14T06:35:45.076Z",
+			"tests": [
+				{
+					"name": "should return false",
+					"start": "2017-09-14T06:35:45.009Z",
+					"end": "2017-09-14T06:35:45.073Z",
+					"duration": 64,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`nol( null ).toObject( )`",
+			"duration": 51,
+			"start": "2017-09-14T06:35:45.076Z",
+			"end": "2017-09-14T06:35:45.127Z",
+			"tests": [
+				{
+					"name": "should return object type",
+					"start": "2017-09-14T06:35:45.076Z",
+					"end": "2017-09-14T06:35:45.127Z",
+					"duration": 51,
 					"state": "pass"
 				}
 			],

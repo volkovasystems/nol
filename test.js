@@ -45,13 +45,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"nol": "nol"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const nol = require( "./nol.js" );
@@ -76,6 +76,52 @@ describe( "nol", ( ) => {
 
 			assert.equal( data.valueOf( ), null );
 
+		} );
+	} );
+
+	describe( "`nol( null )`", ( ) => {
+		it( "should return Null instance", ( ) => {
+			let data = nol( null );
+
+			assert.equal( typeof data, "object" );
+
+			assert.equal( data.constructor.name, "Null" );
+
+			assert.equal( data.valueOf( ), null );
+		} );
+	} );
+
+	describe( "`nol( null ).toString( )`", ( ) => {
+		it( "should return empty string", ( ) => {
+			assert.equal( nol( null ).toString( ), "" );
+		} );
+	} );
+
+	describe( "`nol( null ).toNumber( )`", ( ) => {
+		it( "should return 0", ( ) => {
+			assert.equal( nol( null ).toNumber( ), 0 );
+		} );
+	} );
+
+	describe( "`nol( null ).toBoolean( )`", ( ) => {
+		it( "should return false", ( ) => {
+			assert.equal( nol( null ).toBoolean( ), false );
+		} );
+	} );
+
+	describe( "`nol( null ).toObject( )`", ( ) => {
+		it( "should return object type", ( ) => {
+			let descriptor = nol( null ).toObject( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
 		} );
 	} );
 
