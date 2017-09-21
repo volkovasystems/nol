@@ -92,20 +92,35 @@ describe( "nol", ( ) => {
 	} );
 
 	describe( "`nol( null ).toString( )`", ( ) => {
-		it( "should return empty string", ( ) => {
-			assert.equal( nol( null ).toString( ), "" );
+		it( "should return string type", ( ) => {
+			let result = nol( null ).toString( );
+
+			assert.equal( typeof result, "string" );
+
+			assert.equal( result, "" );
+
 		} );
 	} );
 
 	describe( "`nol( null ).toNumber( )`", ( ) => {
-		it( "should return 0", ( ) => {
-			assert.equal( nol( null ).toNumber( ), 0 );
+		it( "should return number type", ( ) => {
+			let result = nol( null ).toNumber( );
+
+			assert.equal( typeof result, "number" );
+
+			assert.equal( result, 0 );
+
 		} );
 	} );
 
 	describe( "`nol( null ).toBoolean( )`", ( ) => {
-		it( "should return false", ( ) => {
-			assert.equal( nol( null ).toBoolean( ), false );
+		it( "should return boolean type", ( ) => {
+			let result = nol( null ).toBoolean( );
+
+			assert.equal( typeof result, "boolean" );
+
+			assert.equal( result, false );
+
 		} );
 	} );
 

@@ -5,9 +5,9 @@
 		"passes": 6,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-14T06:35:06.458Z",
-		"end": "2017-09-14T06:35:06.464Z",
-		"duration": 6
+		"start": "2017-09-21T06:13:05.469Z",
+		"end": "2017-09-21T06:13:05.474Z",
+		"duration": 5
 	},
 	"tests": [
 		{
@@ -25,22 +25,22 @@
 			"err": {}
 		},
 		{
-			"title": "should return empty string",
-			"fullTitle": "nol `nol( null ).toString( )` should return empty string",
+			"title": "should return string type",
+			"fullTitle": "nol `nol( null ).toString( )` should return string type",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
-			"title": "should return 0",
-			"fullTitle": "nol `nol( null ).toNumber( )` should return 0",
+			"title": "should return number type",
+			"fullTitle": "nol `nol( null ).toNumber( )` should return number type",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
-			"title": "should return false",
-			"fullTitle": "nol `nol( null ).toBoolean( )` should return false",
+			"title": "should return boolean type",
+			"fullTitle": "nol `nol( null ).toBoolean( )` should return boolean type",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -71,22 +71,22 @@
 			"err": {}
 		},
 		{
-			"title": "should return empty string",
-			"fullTitle": "nol `nol( null ).toString( )` should return empty string",
+			"title": "should return string type",
+			"fullTitle": "nol `nol( null ).toString( )` should return string type",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
-			"title": "should return 0",
-			"fullTitle": "nol `nol( null ).toNumber( )` should return 0",
+			"title": "should return number type",
+			"fullTitle": "nol `nol( null ).toNumber( )` should return number type",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
-			"title": "should return false",
-			"fullTitle": "nol `nol( null ).toBoolean( )` should return false",
+			"title": "should return boolean type",
+			"fullTitle": "nol `nol( null ).toBoolean( )` should return boolean type",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
